@@ -1,4 +1,3 @@
-node_modules/
-_build/
 output/
-.cert/
+node_modules/
+.temp-output/ 

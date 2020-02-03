@@ -1,13 +1,18 @@
 import { create, tsx } from '@dojo/framework/core/vdom';
-import * as css from './snackbar.m.css';
+import theme from '@dojo/framework/core/middleware/theme';
 
-const factory = create().properties<{message: string, show: boolean}>();
+import * as css from '../theme/default/Snackbar.m.css';
 
-export default factory(function ({ properties }) {
+export interface SnackbarProperties {message: string, show: boolean};
+
+const factory = create({theme}).properties<SnackbarProperties>();
+
+export default factory(function ({ properties, middleware: { theme }  }) {
   const { message, show } = properties();
-  const currClass = [css.root];
+  const themedCss = theme.classes(css);
+  const currClass = [themedCss.root];
   if (show) {
-    currClass.push(css.show);
+    currClass.push(themedCss.show);
   }
 	return (
 		<div classes={currClass} key={message}>{ message }</div>

@@ -1,7 +1,14 @@
 {
+	"extends": "./node_modules/@dojo/parade/parade.json",
+		"build-theme": {
+		"themes": [
+			"odoe-dojo-comps"
+		]
+	},
 	"build-widget": {
+		"prefix": "odoe-dojo-comps",
 		"widgets": [
-			"src/snackbar/snackbar"
+			"src/snackbar/Snackbar"
 		]
 	}
 }
