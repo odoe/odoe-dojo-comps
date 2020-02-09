@@ -14,7 +14,7 @@ const baseAssertion = assertionTemplate(() => {
 
 describe('Snackbar', () => {
 	it('render', () => {
-		const h = harness(() => <Snackbar show={true} message="This is my snackbar" />);
+		const h = harness(() => <Snackbar open={true} message="This is my snackbar" />);
 		h.expect(baseAssertion);
 	});
 });
